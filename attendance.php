@@ -61,7 +61,6 @@ function haversine($lat1, $lon1, $lat2, $lon2) {
 }
 ?>
 
-<!-- HTML Form to Capture Employee's Current Location -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -69,21 +68,50 @@ function haversine($lat1, $lon1, $lat2, $lon2) {
     <title>Attendance Marking</title>
     <script>
         // Function to fetch user's current location
-        function fetchLocation() {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(showPosition, showError);
-            } else {
-                alert("Geolocation is not supported by this browser.");
+        // Fetch current location with detailed error handling
+function fetchLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+            showPosition,
+            showError,
+            { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
+        );
+    } else {
+        alert("Geolocation is not supported by this browser.");
+    }
+}
+
+function showPosition(position) {
+    console.log("Latitude: " + position.coords.latitude);
+    console.log("Longitude: " + position.coords.longitude);
+    document.getElementById("current_lat").value = position.coords.latitude;
+    document.getElementById("current_lon").value = position.coords.longitude;
+}
+
+function showError(error) {
+    let errorMessage = "An unknown error occurred.";
+    switch (error.code) {
+        case error.PERMISSION_DENIED:
+            errorMessage = "User denied the request for Geolocation.";
+            break;
+        case error.POSITION_UNAVAILABLE:
+            errorMessage = "Location information is unavailable.";
+            break;
+        case error.TIMEOUT:
+            errorMessage = "The request to get user location timed out.";
+            break;
+    }
+    alert("Error: " + errorMessage);
+    console.error("Geolocation Error: ", error.message);
+}
+
+        // Function to check if the device is a mobile device
+        function checkDevice() {
+            const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            if (!isMobile) {
+                document.getElementById("desktop-warning").style.display = "block";
+                document.getElementById("attendance-form").style.display = "none";
             }
-        }
-
-        function showPosition(position) {
-            document.getElementById("current_lat").value = position.coords.latitude;
-            document.getElementById("current_lon").value = position.coords.longitude;
-        }
-
-        function showError(error) {
-            alert("Error fetching location: " + error.message);
         }
     </script>
 
@@ -151,24 +179,27 @@ function haversine($lat1, $lon1, $lat2, $lon2) {
             background-color: #218838;
         }
 
-        /* Message Styling */
-        .message {
+        /* Warning Message */
+        #desktop-warning {
+            display: none;
+            background-color: #dc3545;
+            color: #fff;
             text-align: center;
+            padding: 20px;
             font-size: 1.2em;
-            margin-top: 20px;
-            color: #dc3545;
         }
     </style>
 </head>
-<body onload="fetchLocation()">
+<body onload="fetchLocation(); checkDevice();">
     <h1>Employee Attendance</h1>
-    
-    <!-- Display Message if Attendance is marked or error occurs -->
-    <?php if (isset($message)) : ?>
-        <p class="message"><?php echo $message; ?></p>
-    <?php endif; ?>
 
-    <form method="POST" action="attendance.php">
+    <!-- Warning Message for Desktop Users -->
+    <div id="desktop-warning">
+        This feature is compatible with mobile devices only.
+    </div>
+
+    <!-- Attendance Form -->
+    <form id="attendance-form" method="POST" action="attendance.php">
         <label for="employee_id">Employee ID:</label>
         <input type="text" id="employee_id" name="employee_id" required><br>
 

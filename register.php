@@ -1,8 +1,8 @@
 <?php
-require_once 'config.php'; // Include database connection
+require_once 'config.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Get form data
+    
     $name = $_POST['name'];
     $employee_id = $_POST['employee_id'];
     $contact = $_POST['contact'];
@@ -10,22 +10,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $longitude = $_POST['longitude'];
     $radius = $_POST['radius'];
 
-    // Insert into database
+   
     try {
         $stmt = $conn->prepare("INSERT INTO employees (name, employee_id, contact, latitude, longitude, radius) 
                                 VALUES (?, ?, ?, ?, ?, ?)");
         $stmt->execute([$name, $employee_id, $contact, $latitude, $longitude, $radius]);
 
-        // Redirect to refresh the page
+        
         header("Location: register.php");
-        exit(); // Ensure no further code executes
+        exit(); 
     } catch (PDOException $e) {
         echo "Error: " . $e->getMessage();
     }
 }
 ?>
 
-<!-- HTML Form -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <!-- External Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        /* Global Styles */
+       
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             min-height: 100vh;
         }
 
-        /* Form Container */
+        
         .container {
             background-color: #ffffff;
             padding: 30px;
@@ -98,7 +98,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             background-color: #3a8ad3;
         }
 
-        /* Responsive Design */
+       
         @media (max-width: 600px) {
             .container {
                 padding: 20px;

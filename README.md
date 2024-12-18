@@ -1,6 +1,6 @@
 Project: Attendance Management System
 
-Project Structure:
+Project Structure ----------------------------------------------------------------------------------
 
 project-root/
 |-- config.php
@@ -13,28 +13,41 @@ project-root/
 |-- validate_attendance.php
 |-- location.js
 
-Description of Files:
+Description of Files-----------------------------------------------------------------------------
 
 config.php: Contains database connection details and configuration settings.
 
-index.php: The main landing page or login page for the system.
+register.php: here employee can register themselves.
 
 admin_dashboard.php: The dashboard for admin users, displaying an overview and navigation options.
 
 attendance_logs.php: Displays the attendance records in a tabular format.
 
-add_employee.php: A page to add new employee details to the system.
-
-delete_employee.php: Handles deletion of employee records.
+attendance.php: allows employee to mark their attendance
 
 edit_employee.php: Allows editing of employee details.
 
-styles.css: Stylesheet used for the application.
+database.sql: SQL script for setting up database tables.
 
-main.js: Contains JavaScript logic for interactive UI elements.
 
-api_endpoints.php: API file for managing AJAX calls.
+EXECUTION PROCESS---------------------------------------------------------------------------------
+ 1... Import the database in the phpmyadmin
 
-migration.sql: SQL script for setting up database tables.
+ 2... run this command "http://localhost/attendance_management_system/register.php" in your browser
+      This will open a registration page where employee can register themselves
+    
+ 3... run this command "http://localhost/attendance_management_system/attendance.php" in your browser
+      This will open a page where employee can mark attendence , and it is not compatible to desktop browsers
 
-uploads/: Directory where uploaded files (if any) are stored.
+ 4... run this command "http://localhost/attendance_management_system/admin_dashboard.php" in your browser
+      This will open a page where employee details will be displayed to the admin , admin can edit / delete /create a new employee details
+
+ 5... run this command "http://localhost/attendance_management_system/attendance_logs.php" in your browser
+      This will open a page where employee attendance details will be displayed to the admin
+
+ 6...employee details will be stored in attendance__system database (in employees table). 
+
+ 7...employee who marks the attedance details will be   stored in attendance__system database (in attendance_logs table)..
+ 
+
+

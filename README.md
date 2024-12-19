@@ -10,8 +10,7 @@ project-root/
 |-- attendance.php
 |-- database.sql
 |-- edit_employee.php
-|-- validate_attendance.php
-|-- location.js
+
 
 Description of Files-----------------------------------------------------------------------------
 

@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 // Function to calculate distance using Haversine formula
 function haversine($lat1, $lon1, $lat2, $lon2) {
     $earthRadius = 6371; // Radius of the earth in km
-    $dLat = deg2rad($lat2 - $lat1);
+    $dLat = deg2rad($lat2 - $lat1); // converting degree to radians for accurate calculations
     $dLon = deg2rad($lon2 - $lon1);
 
     $a = sin($dLat / 2) * sin($dLat / 2) +

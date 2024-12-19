@@ -58,4 +58,5 @@ EXECUTION PROCESS---------------------------------------------------------------
  7...employee who marks the attedance details will be   stored in attendance__system database (in attendance_logs table)..
  
 
+https://github.com/ManiGanji/attendance_management_system/blob/81213f01c7f5aad98ad5fcfcadc23e9647c9c406/registeroutput.png
 

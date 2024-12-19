@@ -43,8 +43,8 @@ EXECUTION PROCESS---------------------------------------------------------------
 
  2... run this command "http://localhost/attendance_management_system/register.php" in your browser
       This will open a registration page where employee can register themselves
-
-      ![image alt](https://github.com/ManiGanji/attendance_management_system/blob/main/registeroutput.png?raw=true)
+![registeroutput](registeroutput.png)
+      
     
  3... run this command "http://localhost/attendance_management_system/attendance.php" in your browser
       This will open a page where employee can mark attendence , and it is not compatible to desktop browsers

@@ -28,6 +28,15 @@ edit_employee.php: Allows editing of employee details.
 
 database.sql: SQL script for setting up database tables.
 
+INSTALLATION PROCESS--------------------------------------------------
+ 1...install the xampp server
+
+ 2...next run the apache and mysql server
+
+ 3...next open phpmyadmin
+
+ 4...here import the database.sql , so that the database and also tables in the database are loaded...
+
 
 EXECUTION PROCESS---------------------------------------------------------------------------------
  1... Import the database in the phpmyadmin

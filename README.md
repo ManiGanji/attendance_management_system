@@ -43,6 +43,8 @@ EXECUTION PROCESS---------------------------------------------------------------
 
  2... run this command "http://localhost/attendance_management_system/register.php" in your browser
       This will open a registration page where employee can register themselves
+
+      ![image alt](https://github.com/ManiGanji/attendance_management_system/blob/main/registeroutput.png?raw=true)
     
  3... run this command "http://localhost/attendance_management_system/attendance.php" in your browser
       This will open a page where employee can mark attendence , and it is not compatible to desktop browsers
@@ -58,4 +60,5 @@ EXECUTION PROCESS---------------------------------------------------------------
  7...employee who marks the attedance details will be   stored in attendance__system database (in attendance_logs table)..
  
 
+https://github.com/ManiGanji/attendance_management_system/blob/81213f01c7f5aad98ad5fcfcadc23e9647c9c406/registeroutput.png
 

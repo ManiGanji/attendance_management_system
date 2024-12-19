@@ -48,17 +48,22 @@ EXECUTION PROCESS---------------------------------------------------------------
     
  3... run this command "http://localhost/attendance_management_system/attendance.php" in your browser
       This will open a page where employee can mark attendence , and it is not compatible to desktop browsers
+       ![attoutput](attendancemarkingoutput_when_opened_in_desktop.png)
+       ![attoutput](attendancemarkingutput.png)
+
 
  4... run this command "http://localhost/attendance_management_system/admin_dashboard.php" in your browser
       This will open a page where employee details will be displayed to the admin , admin can edit / delete /create a new employee details
+      ![admin](admindashboardoutput.png)
 
  5... run this command "http://localhost/attendance_management_system/attendance_logs.php" in your browser
       This will open a page where employee attendance details will be displayed to the admin
-
+    ![attlogs](attendancelogsoutput.png)
  6...employee details will be stored in attendance__system database (in employees table). 
+ ![employeetableop](employeetableoutputbackend.png)
 
  7...employee who marks the attedance details will be   stored in attendance__system database (in attendance_logs table)..
  
 
-https://github.com/ManiGanji/attendance_management_system/blob/81213f01c7f5aad98ad5fcfcadc23e9647c9c406/registeroutput.png
+
 
